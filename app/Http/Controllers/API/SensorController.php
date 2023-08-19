@@ -8,9 +8,15 @@ use Illuminate\Http\Request;
 
 class ChartJSController extends Controller
 {
-    public function create()
+    public function create(Request $request)
     {
         try {
+            $this->validate($request, [
+                'suhudht' => 'required',
+                'kelembabandht' => 'required',
+                'sensorBerat' => 'required',
+            ]);
+
             $reqSuhudht = $request->input('suhudht');
             $reqKelembabandht = $request->input('kelembabandht');
             $reqSensorBerat = $request->input('sensorBerat');

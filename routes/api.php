@@ -20,4 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/sensor/create', [SensorController::class, 'create']);
+Route::post('/sensor/create', [SensorController::class, 'create']);
